@@ -1,67 +1,110 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StreamOurTV - USA TV Guide</title>
-
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial;
-background:#f5f5f5;
 }
+
+body{
+background:#f4f6f9;
+}
+
+/* HEADER */
 
 header{
-background:#111;
+background:linear-gradient(135deg,#ff7a00,#ff9d2f);
 color:white;
-padding:30px;
+padding:35px;
 text-align:center;
 }
 
+header h1{
+font-size:36px;
+margin-bottom:5px;
+}
+
+/* NAV */
+
 nav{
-background:#ff7a00;
-padding:14px;
+background:white;
+padding:15px;
 text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
+z-index:100;
 }
 
 nav a{
-color:white;
 text-decoration:none;
-margin:15px;
+margin:0 15px;
+color:#ff7a00;
 font-weight:bold;
 }
 
-.hero{
-background:white;
-padding:50px;
-text-align:center;
+nav a:hover{
+opacity:0.7;
 }
 
+/* HERO */
+
+.hero{
+padding:60px 20px;
+text-align:center;
+background:white;
+margin-bottom:20px;
+}
+
+.hero h2{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.date{
+color:#666;
+}
+
+/* CONTAINER */
+
 .container{
-width:95%;
+width:92%;
 max-width:1200px;
 margin:auto;
-padding:20px;
 }
+
+/* CARD */
 
 .card{
 background:white;
+margin-top:20px;
 padding:25px;
-margin-top:25px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.08);
+border-radius:12px;
+box-shadow:0 4px 14px rgba(0,0,0,0.08);
 }
 
-h2{
-color:#ff7a00;
+/* SEARCH */
+
+input{
+padding:12px;
+width:250px;
+border-radius:6px;
+border:1px solid #ddd;
 }
+
+/* TABLE */
 
 table{
 width:100%;
 border-collapse:collapse;
+margin-top:15px;
 }
 
 th{
@@ -71,23 +114,29 @@ padding:12px;
 }
 
 td{
-border:1px solid #ddd;
-padding:10px;
+border-bottom:1px solid #eee;
+padding:12px;
 text-align:center;
 }
 
-input{
-padding:10px;
-width:250px;
-margin-bottom:15px;
+tr:hover{
+background:#fff6ef;
 }
+
+/* FOOTER */
 
 footer{
+margin-top:40px;
 background:#111;
 color:white;
-padding:35px;
+padding:40px;
 text-align:center;
-margin-top:40px;
+}
+
+footer a{
+color:#ff7a00;
+text-decoration:none;
+margin:0 10px;
 }
 
 </style>
@@ -97,20 +146,22 @@ margin-top:40px;
 <body>
 
 <header>
+
 <h1>StreamOurTV</h1>
-<p>USA TV Guide & Channel Schedule</p>
+<p>USA TV Guide & Daily Channel Schedule</p>
+
 </header>
 
 <nav>
-<a href="#">Home</a>
-<a href="#schedule">TV Schedule</a>
-<a href="#contact">Contact</a>
+
+<a href="#">Home</a> <a href="#schedule">TV Schedule</a> <a href="#contact">Contact</a>
+
 </nav>
 
 <section class="hero">
 
-<h2>Today's USA TV Listings</h2>
-<p id="date"></p>
+<h2>Today's TV Listings</h2>
+<p class="date" id="date"></p>
 
 </section>
 
@@ -120,13 +171,15 @@ margin-top:40px;
 
 <h2>Search Channel</h2>
 
-<input type="text" id="search" placeholder="Search channel..." onkeyup="filterTable()">
+<br>
+
+<input type="text" id="search" placeholder="Search TV channel..." onkeyup="filterTable()">
 
 </div>
 
 <div id="schedule" class="card">
 
-<h2>100+ USA TV Channel Schedule</h2>
+<h2>USA TV Channel Schedule</h2>
 
 <table id="tvTable">
 
@@ -142,15 +195,18 @@ margin-top:40px;
 
 <div class="card">
 
-<h2>About</h2>
+<h2>About StreamOurTV</h2>
 
 <p>
-StreamOurTV provides informational TV listings for viewers in the United States. 
-We help users discover daily programming schedules across many television networks.
+StreamOurTV is an informational TV guide platform that provides daily schedules of popular television networks in the United States.
 </p>
 
 <p>
-We do not host or stream any media content.
+We help viewers easily discover shows, programs, and broadcasts across multiple channels.
+</p>
+
+<p>
+This website does not stream or host any media content.
 </p>
 
 </div>
@@ -169,12 +225,18 @@ We do not host or stream any media content.
 
 <p>© 2026 StreamOurTV.site</p>
 
+<p>
+
+<a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Disclaimer</a>
+
+</p>
+
 </footer>
 
 <script>
 
 document.getElementById("date").innerHTML =
-"Updated for: " + new Date().toDateString();
+"Updated: " + new Date().toDateString();
 
 const channels = [
 
@@ -244,3 +306,4 @@ row.style.display = channel.includes(input) ? "" : "none";
 
 </body>
 </html>
+
