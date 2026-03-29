@@ -1,198 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Device Registration & Setup Guide</title>
-  <meta name="description" content="Step-by-step guide to set up and activate Prime Video on smart TVs and streaming devices without any copyright issues.">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #f7faff, #e3edf9);
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding: 20px;
-      line-height: 1.6em;
-    }
-    .container {
-      background-color: #ffffff;
-      border-radius: 12px;
-      padding: 25px 20px;
-      width: 100%;
-      max-width: 900px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      font-size: 26px;
-      color: #2c3e50;
-      margin-bottom: 8px;
-      text-align: center;
-    }
-    .instructions {
-      font-size: 14px;
-      color: #555;
-      text-align: center;
-    }
-    .code-input input[type="text"] {
-      width: 100%;
-      padding: 14px;
-      margin-top: 20px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-      text-align: center;
-    }
-    input::placeholder {
-      font-weight: 500;
-      color: #aaa;
-    }
-    .register-button {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .register-button button {
-      width: 60%;
-      padding: 10px;
-      font-size: 15px;
-      font-weight: bold;
-      background-color: #3498db;
-      color: #fff;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    .register-button button:hover {
-      background-color: #217dbb;
-      transform: scale(1.03);
-    }
-    .steps, .guide {
-      margin-top: 30px;
-    }
-    .steps h3, .guide h3 {
-      font-size: 18px;
-      color: #3498db;
-      margin-bottom: 10px;
-    }
-    .steps ul, .guide ul {
-      padding-left: 20px;
-    }
-    .steps li, .guide li {
-      margin-bottom: 10px;
-      font-size: 14px;
-      color: #333;
-    }
-    .guide-section {
-      background: #f8f9fa;
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 15px;
-      border-left: 5px solid #3498db;
-    }
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 22px;
-      }
-      .register-button button {
-        width: 80%;
-      }
-    }
-    @media (max-width: 480px) {
-      .container {
-        padding: 15px;
-      }
-      h1 {
-        font-size: 20px;
-      }
-      .register-button button {
-        width: 90%;
-        font-size: 14px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StreamOurTV - USA TV Guide & Schedule</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f6f9;
+}
+
+header{
+background:#111;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#0077ff;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+padding:50px;
+text-align:center;
+background:white;
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+.schedule{
+background:white;
+padding:20px;
+margin-top:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table th, table td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+footer{
+margin-top:40px;
+background:#111;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Register Your Device</h1>
-    <br>
-    <p class="instructions">Easily link your smart TV or streaming device to your account</p>
-    <br>
-    <p class="instructions">Enter the code displayed on your device to start streaming</p>
 
-    <div class="code-input">
-      <input type="text" placeholder="Enter Code" />
-    </div>
+<header>
+<h1>StreamOurTV</h1>
+<p>USA TV Guide & Daily Channel Schedule</p>
+</header>
 
-    <div class="register-button">
-      <button id="registerButton">Register</button>
-    </div>
-    <br>
+<nav>
+<a href="#">Home</a>
+<a href="#schedule">TV Schedule</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
 
-    <div class="steps">
-      <h3>Quick Registration Steps</h3>
-      <ul>
-        <li>Open the streaming app on your TV or device.</li>
-        <li>Select “Register on the website.”</li>
-        <li>Note the code displayed on your screen.</li>
-        <li>Visit the registration page and enter your code.</li>
-      </ul>
-    </div>
+<section class="hero">
+<h2>Today's TV Schedule</h2>
+<p>Check the latest schedule for popular TV channels in the United States.</p>
+</section>
 
-    <div class="guide">
-      <h3>Setup Guide for Popular Devices</h3>
-      <div class="guide-section">
-        <strong>1. Fire TV / Stick</strong>
-        <ul>
-          <li>Open the app from the main menu.</li>
-          <li>If not installed, search and add it from the app store.</li>
-          <li>Sign in to start streaming.</li>
-        </ul>
-      </div>
-      <div class="guide-section">
-        <strong>2. Roku</strong>
-        <ul>
-          <li>Navigate to Streaming Channels → Search for the app.</li>
-          <li>Add and launch the channel.</li>
-          <li>Sign in or use the activation code method.</li>
-        </ul>
-      </div>
-      <div class="guide-section">
-        <strong>3. Apple TV</strong>
-        <ul>
-          <li>Search and install the app from the App Store.</li>
-          <li>Open it and log in or enter the displayed code online.</li>
-        </ul>
-      </div>
-      <div class="guide-section">
-        <strong>4. Android TV</strong>
-        <ul>
-          <li>Find and install the app from Google Play Store.</li>
-          <li>Launch and log in to your account.</li>
-        </ul>
-      </div>
-      <div class="guide-section">
-        <strong>5. Smart TVs</strong>
-        <ul>
-          <li>Check if the app is pre-installed or download it from the TV’s app store.</li>
-          <li>Open and log in to enjoy streaming.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<div class="container">
 
-  <script>
-    document.getElementById("registerButton").addEventListener("click", function () {
-      window.location.href = "index2.html";
-    });
-  </script>
+<div id="schedule" class="schedule">
+
+<h2>USA TV Schedule</h2>
+
+<table>
+
+<tr>
+<th>Time</th>
+<th>Channel</th>
+<th>Program</th>
+</tr>
+
+<tr>
+<td>8:00 AM</td>
+<td>CNN</td>
+<td>Morning News</td>
+</tr>
+
+<tr>
+<td>9:00 AM</td>
+<td>FOX</td>
+<td>Daily Report</td>
+</tr>
+
+<tr>
+<td>10:00 AM</td>
+<td>ABC</td>
+<td>Good Morning America</td>
+</tr>
+
+<tr>
+<td>12:00 PM</td>
+<td>NBC</td>
+<td>Midday News</td>
+</tr>
+
+<tr>
+<td>7:00 PM</td>
+<td>HBO</td>
+<td>Movie Night</td>
+</tr>
+
+<tr>
+<td>9:00 PM</td>
+<td>ESPN</td>
+<td>Sports Center</td>
+</tr>
+
+</table>
+
+</div>
+
+<div id="about" class="schedule">
+
+<h2>About StreamOurTV</h2>
+
+<p>
+StreamOurTV provides a simple online TV guide for viewers in the United States. 
+Our platform helps users find daily TV schedules, popular shows, and channel programming information quickly.
+</p>
+
+<p>
+We are an informational website and do not host or stream any TV content. 
+Our goal is to help viewers discover programs available on different television networks.
+</p>
+
+</div>
+
+<div id="contact" class="schedule">
+
+<h2>Contact Us</h2>
+
+<p>Email Support:</p>
+
+<p><b>support@ourtv.site</b></p>
+
+<p>
+If you have any questions about TV schedules or our website, feel free to contact our support team.
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>© 2026 StreamOurTV.site</p>
+
+<p>
+Privacy Policy | Terms & Conditions | Disclaimer
+</p>
+
+</footer>
+
 </body>
-  </html>
+</html>
